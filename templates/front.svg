@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ALPHA CARD, FRONT. Coordinate space is PDF points on the full page
+  (trim + 1.65 mm bleed): 252 x 162.3685 pt = 88.90 x 57.28 mm.
+
+  Fill the {{TOKENS}} per SPEC.md:
+    {{NAME_TEXT}}   one or two <text> elements, see "Name" in SPEC.md
+    {{RULE_Y}}      15.88 pt above the TOP name line's baseline
+    {{CAMPUS}}      campus name in capitals
+    {{CODE_SIZE}}   font size that makes the grouped code 84.8 pt wide
+    {{CODE_TEXT}}   the 20-character code grouped in fives: XXXX XXXX XXXX XXXX XXXX
+    {{QR_RECTS}}    the imported QR drawn as black <rect>s inside the 26.0 mm square
+
+  The QR and the code are INPUTS to this template. Nothing here generates them.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1050" height="677" viewBox="0 0 252 162.3685">
+
+  <!-- Background artwork, already extended into the bleed -->
+  <image x="0" y="0" width="252" height="162.3685" preserveAspectRatio="none"
+         xlink:href="../assets/artwork/card-background.png"/>
+
+  <!-- Lockup: bird + ALPHA wordmark (Michroma, tracked 0.12 em) -->
+  <image x="20.5512" y="19.9963" width="19.4196" height="13.05"
+         xlink:href="../assets/artwork/bird-white.png"/>
+  <text x="45.55" y="31.61" font-family="Michroma" font-size="9" letter-spacing="1.08" fill="#ffffff">ALPHA</text>
+
+  <!-- QR tile: 27.6 mm white, radius 2.5 pt; QR 26.0 mm square inside it -->
+  <rect x="153.21" y="56.78" width="78.24" height="78.24" rx="2.5" fill="#ffffff"/>
+  <!-- QR_ORIGIN = (155.48, 59.05); QR_SIZE = 73.70 pt (26.0 mm). The imported
+       symbol, INCLUDING its 4-module quiet zone, must fill exactly this square. -->
+  <g id="qr" fill="#000000">
+{{QR_RECTS}}
+  </g>
+
+  <!-- Rule above the name: 47.18 x 0.94 pt -->
+  <rect x="20.55" y="{{RULE_Y}}" width="47.18" height="0.94" fill="#ffffff"/>
+
+  <!-- Name: Montserrat Bold 12.1 pt, last line baseline 128.49, lines 14.03 apart -->
+{{NAME_TEXT}}
+
+  <!-- Campus: Montserrat Bold 5.1 pt, capitals, tracked 0.19 em -->
+  <text x="20.55" y="140.4" font-family="Montserrat" font-weight="700" font-size="5.1" letter-spacing="0.969" fill="#ffffff">{{CAMPUS}}</text>
+
+  <!-- Code: Montserrat Bold, right-aligned to the tile edge, sized to 84.8 pt wide -->
+  <text x="231.45" y="144.37" text-anchor="end" font-family="Montserrat" font-weight="700" font-size="{{CODE_SIZE}}" fill="#ffffff">{{CODE_TEXT}}</text>
+</svg>

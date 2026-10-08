@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ALPHA CARD, BACK. Identical on every card; nothing to fill in.
+  Same page as the front: 252 x 162.3685 pt including 1.65 mm bleed.
+  back/ALPHA-CARD-BACK.pdf is the print-ready vector original of this.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1050" height="677" viewBox="0 0 252 162.3685">
+
+  <image x="0" y="0" width="252" height="162.3685" preserveAspectRatio="none"
+         xlink:href="../assets/artwork/card-background.png"/>
+
+  <!-- Signature band: full width (into the bleed), 27.35 to 59.49 pt -->
+  <rect x="0" y="27.35" width="252" height="32.14" fill="#EEF2FA"/>
+  <text x="20.55" y="45.99" font-family="Montserrat" font-weight="700" font-size="4.6" letter-spacing="0.736" fill="#666666">STUDENT SIGNATURE</text>
+
+  <!-- If-found block -->
+  <text x="20.55" y="113.47" font-family="Montserrat" font-weight="700" font-size="4.6" letter-spacing="0.736" fill="#E3C778">IF FOUND</text>
+  <text x="20.55" y="128.21" font-family="Montserrat" font-weight="700" font-size="5.6" fill="#ffffff">Return to the front desk at your nearest Alpha</text>
+  <text x="20.55" y="138.42" font-family="Montserrat" font-weight="700" font-size="5.6" fill="#ffffff">campus.</text>
+
+  <!-- Lockup, bottom right, right edge at 231.45 -->
+  <image x="185.12" y="130.06" width="12.08" height="8.12" xlink:href="../assets/artwork/bird-white.png"/>
+  <text x="200.67" y="137.28" font-family="Michroma" font-size="5.6" letter-spacing="0.672" fill="#ffffff">ALPHA</text>
+</svg>
